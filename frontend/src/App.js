@@ -1,18 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import Home from './pages/Home'
+import Header from './components/Header.jsx'
 
 function App() {
   return (
     <>
       <Router>
+        <Header />
         <div className="container">
           <Routes>
-            {/* <Route paht='/' element={<Home/>} /> */}
+            <Route path='/' element={<Home/>} />
 
-
-            <Route paht='*' element={<Navigate to="/" replace />} />
+            {/* Default: Redirect to home */}
+            <Route path='*' element={<Navigate to="/" replace />} />
           </Routes>
         </div>
+
       </Router>
     </>
   );
