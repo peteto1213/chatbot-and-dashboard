@@ -1,0 +1,45 @@
+@import '../variables';
+
+.home {
+    min-height: 100vh;
+    background: url("../resources/banner.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    place-items: center;
+
+    .content {
+        text-align: center;
+        background: $transparentWhite;
+        border-radius: 0.5rem;
+        box-shadow: $box-shadow;
+        padding: 5rem;
+        max-width: 70rem;
+
+        h3 {
+            font-size: 4.5rem;
+            color: $black;
+            text-transform: capitalize;
+        }
+
+        p {
+            font-size: 2.3rem;
+            color: $textColor;
+            padding: 1rem 0;
+            line-height: 2rem;
+            margin: 2rem 0;
+        }
+
+        a, button {
+            transition: 0.15s all linear;
+            @include button($primaryColor, $secondaryColor);
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .home .content {
+        max-width: 50rem;
+    }
+}

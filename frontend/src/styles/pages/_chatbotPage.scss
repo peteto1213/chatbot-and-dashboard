@@ -1,0 +1,106 @@
+.chatbotPage{
+    @include customFlex(row, center, center);
+    background: #333;
+    min-height: 100vh;
+    width: 100%;
+
+    .react-chatbot-kit-chat-container {
+        min-width: 60rem;
+    }
+
+
+    .react-chatbot-kit-chat-header {
+        font-size: 2.5rem;
+    }
+
+    // Bot side style
+    .react-chatbot-kit-chat-bot-avatar-container {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        background-color: $primaryColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .react-chatbot-kit-chat-bot-avatar-letter{
+            font-size: 2rem;
+            color: white;
+        }
+    }
+
+    .react-chatbot-kit-chat-bot-message {
+        font-size: 1.7rem;
+        min-width: 30%;
+        margin-left: 0;
+        padding: 1.5rem 1rem;
+    }
+
+    //User side style
+    .react-chatbot-kit-user-avatar-container {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        margin-left: 12.5px;
+        background-color: #3d4e8d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .react-chatbot-kit-user-chat-message{
+        font-size: 1.7rem;
+        min-width: 30%;
+        margin-right: 0;
+        padding: 1.5rem 1rem;
+    }
+
+    //input box style
+    .react-chatbot-kit-chat-input{
+        font-size: 1.7rem;
+        padding: 1.5rem 1rem;
+    }
+
+    //submit button style
+    .react-chatbot-kit-chat-btn-send{
+        cursor: pointer;
+        transition: 0.2s all linear;
+        border-radius: 0.5rem;
+
+        &:hover{
+            opacity: 0.7;
+        }
+
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .chatbotPage {
+
+        .react-chatbot-kit-chat-container {
+            min-width: 60rem;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .chatbotPage {
+
+        .react-chatbot-kit-chat-container {
+            min-width: 55rem;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .chatbotPage {
+
+        .react-chatbot-kit-chat-container {
+            min-width: 45rem;
+        }
+    }
+}

@@ -1,4 +1,482 @@
-h1 {
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: -webkit-gradient(linear, left top, right top, from(#6296ac), to(#6aacc9));
+  background: linear-gradient(to right, #6296ac, #6aacc9);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 1.2rem 7%;
+}
+
+.header a {
+  color: #333;
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+
+.header a:hover {
+  color: whitesmoke;
+  background: none;
+}
+
+.header .logo {
+  color: #333;
+  font-size: 5rem;
+  margin-right: auto;
+  height: 6rem;
+}
+
+.header .logo a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .logo a img {
+  height: 6rem;
+}
+
+.header .navbar a {
+  margin-right: 2rem;
+  font-size: 2.2rem;
+  text-transform: capitalize;
+}
+
+.header .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .icons .icon {
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #111;
+  margin-left: 0.7rem;
+  cursor: pointer;
+}
+
+.header .icons .icon:hover {
+  color: #fff;
+  background: none;
+}
+
+.header .icons .user-icon {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-color: #7cc0dd;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+.header .icons .user-icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.header #menu-bars {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header #menu-bars {
+    display: inline-block;
+    font-size: 3.5rem;
+    cursor: pointer;
+    -webkit-transition: 0.15s all linear;
+    transition: 0.15s all linear;
+  }
+  .header #menu-bars:hover {
+    color: whitesmoke;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    background: #6296ac;
+    display: none;
+  }
+  .header .navbar a {
+    display: block;
+    background: #7cc0dd;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  }
+  .header .navbar.active {
+    display: block;
+  }
+}
+
+.question-categories-widget .all-categories {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.question-categories-widget .all-categories .category {
+  font-size: 1.8rem;
+  background: #6296ac;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  -webkit-transition: 0.1s all linear;
+  transition: 0.1s all linear;
+}
+
+.question-categories-widget .all-categories .category:hover {
+  opacity: 0.7;
+}
+
+.countries-widget .all-countries {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.countries-widget .all-countries .country {
+  font-size: 1.8rem;
+  background: #7cc0dd;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  -webkit-transition: 0.1s all linear;
+  transition: 0.1s all linear;
+}
+
+.countries-widget .all-countries .country:hover {
+  opacity: 0.7;
+}
+
+.home {
+  min-height: 100vh;
+  background: url("../resources/banner.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.home .content {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 5rem;
+  max-width: 70rem;
+}
+
+.home .content h3 {
+  font-size: 4.5rem;
+  color: #111;
+  text-transform: capitalize;
+}
+
+.home .content p {
+  font-size: 2.3rem;
+  color: #333;
+  padding: 1rem 0;
+  line-height: 2rem;
+  margin: 2rem 0;
+}
+
+.home .content a, .home .content button {
+  -webkit-transition: 0.15s all linear;
+  transition: 0.15s all linear;
+  margin-top: 1rem;
+  display: inline-block;
+  background: #6296ac;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
+}
+
+.home .content a:hover, .home .content button:hover {
+  background: #7cc0dd;
+}
+
+@media (max-width: 768px) {
+  .home .content {
+    max-width: 50rem;
+  }
+}
+
+.chatbotPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #333;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.chatbotPage .react-chatbot-kit-chat-container {
+  min-width: 60rem;
+}
+
+.chatbotPage .react-chatbot-kit-chat-header {
+  font-size: 2.5rem;
+}
+
+.chatbotPage .react-chatbot-kit-chat-bot-avatar-container {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  background-color: #6296ac;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chatbotPage .react-chatbot-kit-chat-bot-avatar-container .react-chatbot-kit-chat-bot-avatar-letter {
+  font-size: 2rem;
+  color: white;
+}
+
+.chatbotPage .react-chatbot-kit-chat-bot-message {
+  font-size: 1.7rem;
+  min-width: 30%;
+  margin-left: 0;
+  padding: 1.5rem 1rem;
+}
+
+.chatbotPage .react-chatbot-kit-user-avatar-container {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin-left: 12.5px;
+  background-color: #3d4e8d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chatbotPage .react-chatbot-kit-user-chat-message {
+  font-size: 1.7rem;
+  min-width: 30%;
+  margin-right: 0;
+  padding: 1.5rem 1rem;
+}
+
+.chatbotPage .react-chatbot-kit-chat-input {
+  font-size: 1.7rem;
+  padding: 1.5rem 1rem;
+}
+
+.chatbotPage .react-chatbot-kit-chat-btn-send {
+  cursor: pointer;
+  -webkit-transition: 0.2s all linear;
+  transition: 0.2s all linear;
+  border-radius: 0.5rem;
+}
+
+.chatbotPage .react-chatbot-kit-chat-btn-send:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .chatbotPage .react-chatbot-kit-chat-container {
+    min-width: 60rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .chatbotPage .react-chatbot-kit-chat-container {
+    min-width: 55rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .chatbotPage .react-chatbot-kit-chat-container {
+    min-width: 45rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+  padding-top: 5rem;
+}
+
+.container section {
+  padding: 4.5rem 7%;
+}
+
+.container section .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 2.5rem 0;
   font-size: 3.5rem;
+  background: #6aacc9;
+  border-radius: 0.5rem;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+.container section .heading h1 {
+  font-size: 4rem;
+}
+
+.container section .heading .icon {
+  margin: 0 1rem;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .container section .heading h1 {
+    font-size: 3.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,115 @@
+// Color variables
+$primaryColor: #6296ac;
+$primaryColorLighter: #6ba4bd;
+$secondaryColor: #7cc0dd;
+$secondaryColorLighter: #6aacc9;
+$lightColor: rgba(193, 235, 225, 0.7);
+$lightColorHover: rgba(119, 175, 162, 0.7);
+$borderColor: rgba(240, 240, 240, 0.863);
+$activeColor: #d7fada;
+$inactiveColor: rgb(156, 156, 156);
+$textColor: #333;
+$blogBgColor: #f5f7f9;
+$errorTextColor: rgb(212, 2, 2);
+$black: #111;
+$transparentWhite: rgba(255, 255, 255, 0.7);
+
+$primaryFont: 'Josefin Sans', sans-serif;
+
+$border: 0.1rem solid rgba(0, 0, 0, 0.2);
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+
+@mixin flexRowCenter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flexColumnCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin customFlex($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin button($backgroundColor, $hoverColor) {
+    margin-top: 1rem;
+    display: inline-block;
+    background: $backgroundColor;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    font-size: 2rem;
+    border: none;
+
+    &:hover {
+        background: $hoverColor;
+    }
+}
+
+@mixin inputField() {
+    margin-bottom: 2rem;
+    width: 100%;
+
+    h3 {
+        font-size: 2rem;
+        margin-left: 0.5rem;
+        color: $primaryColor;
+
+        span {
+            font-size: 1.5rem;
+            color: $textColor;
+        }
+    }
+
+    input {
+        margin: 1rem 0;
+        padding: 1.2rem;
+        font-size: 1.7rem;
+        color: $textColor;
+        border-radius: 0.5rem;
+        border: 0.1rem solid $primaryColorLighter;
+        width: 100%;
+    }
+}
+
+@mixin errorh2() {
+    color: $errorTextColor;
+    margin-bottom: 1.3rem;
+    font-size: 1.7rem;
+}
+
+@mixin no-wordings() {
+    color: gray;
+    font-size: 2.5rem;
+    text-align: center;
+    align-self: center;
+    margin: auto;
+    line-height: 2.5rem;
+}
+
+@mixin back-btn() {
+    color: white;
+    background: $lightColorHover;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    border: none;
+    transition: all 0.1s ease;
+
+    &:hover {
+        color: gray;
+        background: $lightColor;
+    }
+}

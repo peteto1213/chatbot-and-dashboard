@@ -1,0 +1,25 @@
+.question-categories-widget{
+
+    .all-categories{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        @include customFlex(row, flex-start, flex-start);
+        flex-wrap: wrap;
+        gap: 0.75rem;
+
+        .category{
+            font-size: 1.8rem;
+            background: $primaryColor;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 1.5rem;
+            cursor: pointer;
+            transition: 0.1s all linear;
+
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
+}
