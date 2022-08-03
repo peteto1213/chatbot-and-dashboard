@@ -63,6 +63,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, message],
+      question: question
     }))
 
     askCountry()
@@ -102,8 +103,21 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
    * @author Pete To
    * @description Action: Remind user to refresh page if they would like to change their nickname
    */
-  const restartMessage = () => {
-    const message = createChatBotMessage("It seems that you have already entered your name, if you wish to edit, please refresh the page")
+  const restartMessage = (customMessage) => {
+    const message = createChatBotMessage(customMessage)
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }))
+  }
+
+  /**
+   * @author Pete To
+   * @description Action: notify user that this session has ended
+   */
+  const notifyEndOfSession = () => {
+    const message = createChatBotMessage("This session has ended, please refresh the page to start a new enquiry")
 
     setState((prev) => ({
       ...prev,
@@ -123,7 +137,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             restartMessage,
             displayQuestion,
             askCountry,
-            notifyResults
+            notifyResults,
+            notifyEndOfSession
           },
         });
       })}

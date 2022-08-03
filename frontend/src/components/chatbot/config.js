@@ -14,6 +14,7 @@ const config = {
     clientNickname: "",
     questionCategories: [],
     questionCategory: "",
+    question: "",
     countries: [],
     country: ""
   },
