@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getAllCountries } from '../../../features/country/countrySlice'
+import { uploadEnquiry } from '../../../features/enquiry/enquirySlice'
 
 function Countries(props) {
     const { state, setState } = props
     const dispatch = useDispatch()
     const { countries, isError, message } = useSelector((state) => state.country)
+    const { newEnquiry } = useSelector((state) => state.enquiry)
 
     //Fetch countries data from own RESTful API
   useEffect(() => {
@@ -20,6 +22,15 @@ function Countries(props) {
   const setCountry = (countryId) => {
     //update state
     setState((state) => ({...state, country: countryId}))
+    
+    //upload enquiry
+    const body = {
+      clientNickname: state.clientNickname,
+      question: state.question,
+      questionCategory: state.questionCategory,
+      country: countryId
+    }
+    dispatch(uploadEnquiry(body))
 
     //notify results
     props.actionProvider.notifyResults()

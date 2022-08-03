@@ -6,7 +6,8 @@ const initialState = {
     isError: false,
     isSuccess: false,
     isLoading: false,
-    message: ''
+    message: '',
+    newEnquiry: ''
 }
 
 //get all enquiries
@@ -14,6 +15,19 @@ export const getAllEnquiries = createAsyncThunk('/enquiry/getAllEnquiries', asyn
     try {
         
         return await enquiryService.getAllEnquiries()
+
+    } catch (error) {
+        const message = (error.response && error.response.data && error.response.data.message ) || error.message || error.toString()
+
+        return thunkAPI.rejectWithValue(message)
+    }
+})
+
+//upload an enquiry from a client
+export const uploadEnquiry = createAsyncThunk('/enquiry/uploadEnquiry', async(body, thunkAPI) => {
+    try {
+        
+        return await enquiryService.uploadEnquiry(body)
 
     } catch (error) {
         const message = (error.response && error.response.data && error.response.data.message ) || error.message || error.toString()
@@ -32,6 +46,7 @@ export const enquirySlice = createSlice({
             state.isSuccess = false
             state.isLoading = false
             state.message = ''
+            state.newEnquiry = ''
         }
     },
     extraReducers: (builder) => {
@@ -50,6 +65,20 @@ export const enquirySlice = createSlice({
                 state.isError = true
                 state.message = action.payload
                 state.enquiries = []
+            })
+            .addCase(uploadEnquiry.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(uploadEnquiry.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.newEnquiry = action.payload
+            })
+            .addCase(uploadEnquiry.rejected, (state, action) => {
+                state.isLoading = false
+                state.isError = true
+                state.message = action.payload
+                state.newEnquiry = ''
             })
     }
 })

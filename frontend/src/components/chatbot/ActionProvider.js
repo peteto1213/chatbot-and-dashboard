@@ -1,8 +1,8 @@
 import React from 'react';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
+
   //Actions related to the user input
-  
   /**
    * @author Pete To
    * @description Action 1: Nickname error function

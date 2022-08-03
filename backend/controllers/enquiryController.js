@@ -2,6 +2,7 @@ const asyncHandler = require('express-async-handler')
 const Enquiry = require('../models/enquiryModel')
 const Country = require('../models/countryModel')
 const QuestionCategory = require('../models/questionCategoryModel')
+const { ObjectId } = require('mongodb')
 
 /**
  * @author Pete To
@@ -12,7 +13,7 @@ const QuestionCategory = require('../models/questionCategoryModel')
 const getAllEnquiries = asyncHandler(async (req, res) => {
     const enquiries = await Enquiry.find()
                             .populate('questionCategory', 'categoryName')
-                            .populate('country', 'countryISO clientPopulation latitude longitude')
+                            .populate('country', 'countryName countryISO clientPopulation latitude longitude')
     
     res.status(200).json(enquiries)
 })
@@ -24,7 +25,7 @@ const getAllEnquiries = asyncHandler(async (req, res) => {
  * @access Public
  */
 const uploadEnquiry = asyncHandler(async (req, res) => {
-    if(req.body.clientNickname || req.body.question || req.body.questionCategory || req.body.country){
+    if(!req.body.clientNickname || !req.body.question || !req.body.questionCategory || !req.body.country){
         res.status(400)
         throw new Error("Please complete all the required fields")
     }
@@ -32,8 +33,8 @@ const uploadEnquiry = asyncHandler(async (req, res) => {
     const enquiry = await Enquiry.create({
         clientNickname: req.body.clientNickname,
         question: req.body.question,
-        questionCategory: req.body.questionCategory,
-        country: req.body.country
+        questionCategory: ObjectId(req.body.questionCategory),
+        country: ObjectId(req.body.country)
     })
 
     res.status(200).json(enquiry)

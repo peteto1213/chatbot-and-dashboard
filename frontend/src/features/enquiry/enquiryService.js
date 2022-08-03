@@ -9,9 +9,16 @@ const getAllEnquiries = async() => {
     return response.data
 }
 
+//upload enquiry from client
+const uploadEnquiry = async(body) => {
+    const response = await axios.post(ENQUIRY_API_URL, body)
+
+    return response.data
+}
 
 const enquiryService = {
-    getAllEnquiries
+    getAllEnquiries,
+    uploadEnquiry
 }
 
 export default enquiryService
