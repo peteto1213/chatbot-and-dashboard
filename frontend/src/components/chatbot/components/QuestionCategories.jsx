@@ -1,29 +1,33 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux'
+import { getAllQuestionCategories } from '../../../features/questionCategory/questoinCategorySlice'
 
 function QuestionCategories(props) {
 
     const { state, setState } = props
+    const dispatch = useDispatch()
+    const { questionCategories, isError, message } = useSelector((state) => state.questionCategory)
 
     //Fetch question categories data from own RESTful API
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => {
-        const firstFive = data.slice(0, 6)
-        setState(state => ({ ...state, questionCategories: firstFive}))
-      })
+    dispatch(getAllQuestionCategories())
+
+    if(isError){
+      alert(message)
+    }
   }, []);
 
   //Record client's choice of question category
-  const setQuestionCategory = (categoryId) => {
-    setState(state => ({ ...state, questionCategory: categoryId}))
-    props.actionProvider.askQuestion(categoryId)
+  const setQuestionCategory = (categoryId, categoryName) => {
+    setState(state => ({ ...state, questionCategory: categoryId, categoryName: categoryName}))
+
+    props.actionProvider.askQuestion(categoryName)
   }
 
   const renderQuestionCategories = () => {
-    return state.questionCategories.map((category) =>
-        <li key={category.id} className="category" onClick={() => {setQuestionCategory(category.id)}}>
-            {category.name}
+    return questionCategories.map((category) =>
+        <li key={category._id} className="category" onClick={() => {setQuestionCategory(category._id, category.categoryName)}}>
+            {category.categoryName}
         </li>
     )
   }

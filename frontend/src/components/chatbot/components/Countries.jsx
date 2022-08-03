@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { getAllCountries } from '../../../features/country/countrySlice'
 
 function Countries(props) {
     const { state, setState } = props
+    const dispatch = useDispatch()
+    const { countries, isError, message } = useSelector((state) => state.country)
 
     //Fetch countries data from own RESTful API
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => {
-        const firstFive = data.slice(0, 6)
-        setState(state => ({ ...state, countries: firstFive}))
-      })
+    dispatch(getAllCountries())
+
+    if(isError){
+      alert(message)
+    }
   }, []);
 
   //Handle client's response of country choice
@@ -24,9 +27,9 @@ function Countries(props) {
 
   //Render according to number of countries from database
   const renderCountries = () => {
-    return state.countries.map((country) =>
-        <li key={country.id} className="country" onClick={() => {setCountry(country.id)}}>
-            {country.name}
+    return countries.map((country) =>
+        <li key={country._id} className="country" onClick={() => {setCountry(country._id)}}>
+            {country.countryISO}
         </li>
     )
   }
