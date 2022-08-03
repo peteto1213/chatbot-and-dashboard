@@ -238,6 +238,84 @@
   opacity: 0.7;
 }
 
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loadingSpinnerContainer .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loadingSpinnerContainer .lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #dfc;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: white transparent transparent transparent;
+}
+
+.loadingSpinnerContainer .lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.loadingSpinnerContainer .lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.loadingSpinnerContainer .lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .home {
   min-height: 100vh;
   background: url("../resources/banner.jpg") no-repeat;
@@ -407,6 +485,234 @@
 @media (max-width: 450px) {
   .chatbotPage .react-chatbot-kit-chat-container {
     min-width: 45rem;
+  }
+}
+
+.all-questions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.all-questions #stream {
+  margin-left: auto;
+  display: none;
+}
+
+.all-questions .heading {
+  width: 100%;
+}
+
+.all-questions .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.all-questions .content .all-enquiries {
+  width: 75%;
+  margin-right: 1.1rem;
+}
+
+.all-questions .content .all-enquiries .no-wordings {
+  text-align: center;
+  margin-top: 3rem;
+  color: rebeccapurple;
+  font-size: 2rem;
+}
+
+.all-questions .content .all-enquiries table {
+  margin: 1rem 0;
+  background: #fdfdfd;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: table;
+  border-color: gray;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.all-questions .content .all-enquiries table thead {
+  background-color: transparent;
+  vertical-align: middle;
+  color: #6296ac;
+  font-weight: 700;
+}
+
+.all-questions .content .all-enquiries table thead tr {
+  display: table-row;
+}
+
+.all-questions .content .all-enquiries table thead tr th {
+  border: 1px solid #dbdbdb;
+  padding: 0.5rem 0.3rem;
+  vertical-align: top;
+}
+
+.all-questions .content .all-enquiries table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+  color: gray;
+}
+
+.all-questions .content .all-enquiries table tbody tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.all-questions .content .all-enquiries table tbody tr td {
+  border: 1px solid #dbdbdb;
+  padding: 1rem 0;
+  vertical-align: middle;
+}
+
+.all-questions .content .all-enquiries table tbody tr td a:hover {
+  text-decoration: underline;
+}
+
+.all-questions .content .all-enquiries table tbody tr td .icon {
+  color: white;
+  background: purple;
+  padding: 0.5rem 0.7rem;
+  border-radius: 1rem;
+  font-size: 1.7rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.all-questions .content .all-enquiries table tbody tr td .icon:hover {
+  opacity: 0.7;
+}
+
+.all-questions .content .sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 45rem;
+  height: 100%;
+  gap: 2rem;
+}
+
+.all-questions .content .sidebar .category-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 2rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-color: rgba(240, 240, 240, 0.863);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.all-questions .content .sidebar .category-bar h3 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #7cc0dd;
+  border-bottom: 0.1rem solid rgba(193, 235, 225, 0.7);
+  width: 100%;
+  margin-bottom: 1.3rem;
+}
+
+.all-questions .content .sidebar .category-bar .category {
+  width: 100%;
+  font-size: 2rem;
+  padding: 1.5rem 1rem;
+  border-bottom: 0.1rem solid rgba(193, 235, 225, 0.7);
+  cursor: pointer;
+  color: gray;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.all-questions .content .sidebar .category-bar .category:hover {
+  color: black;
+  padding-left: 2rem;
+}
+
+@media (max-width: 768px) {
+  .all-questions #stream {
+    display: initial;
+    cursor: pointer;
+    -webkit-transition: 0.1s linear;
+    transition: 0.1s linear;
+    margin-right: 2rem;
+  }
+  .all-questions #stream:hover {
+    color: white;
+  }
+  .all-questions .heading .icon {
+    margin-left: 2rem;
+  }
+  .all-questions .content {
+    width: 100%;
+  }
+  .all-questions .content .all-enquiries {
+    width: 98%;
+  }
+  .all-questions .content .all-enquiries .enquiry-table {
+    width: 100%;
+  }
+  .all-questions .content .sidebar {
+    position: absolute;
+    right: -45rem;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  .all-questions .content .sidebar.active {
+    display: initial;
+    position: absolute;
+    right: 0;
+    background: whitesmoke;
+    border-radius: 1.5rem;
+    padding: 3rem 0 0 5rem;
+    margin-top: -2rem;
+    z-index: 1000;
   }
 }
 

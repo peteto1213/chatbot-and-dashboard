@@ -36,6 +36,32 @@ export const uploadEnquiry = createAsyncThunk('/enquiry/uploadEnquiry', async(bo
     }
 })
 
+//get enquiries by question category id
+export const getEnquiriesByQuestionCategoryId = createAsyncThunk('/enquiry/getByQuestionCategoryId', async(questionCategoryId, thunkAPI) => {
+    try {
+        
+        return await enquiryService.getEnquiriesByQuestionCategoryId(questionCategoryId)
+
+    } catch (error) {
+        const message = (error.response && error.response.data && error.response.data.message ) || error.message || error.toString()
+
+        return thunkAPI.rejectWithValue(message)
+    }
+})
+
+//get enquiries by country id
+export const getEnquiriesByCountryId = createAsyncThunk('/enquiry/getByCountryId', async(countryId, thunkAPI) => {
+    try {
+        
+        return await enquiryService.getEnquiriesByCountryId(countryId)
+
+    } catch (error) {
+        const message = (error.response && error.response.data && error.response.data.message ) || error.message || error.toString()
+
+        return thunkAPI.rejectWithValue(message)
+    }
+})
+
 export const enquirySlice = createSlice({
     name: "enquiry",
     initialState,
@@ -79,6 +105,34 @@ export const enquirySlice = createSlice({
                 state.isError = true
                 state.message = action.payload
                 state.newEnquiry = ''
+            })
+            .addCase(getEnquiriesByQuestionCategoryId.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(getEnquiriesByQuestionCategoryId.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.enquiries = action.payload
+            })
+            .addCase(getEnquiriesByQuestionCategoryId.rejected, (state, action) => {
+                state.isLoading = false
+                state.isError = true
+                state.message = action.payload
+                state.enquiries = []
+            })
+            .addCase(getEnquiriesByCountryId.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(getEnquiriesByCountryId.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.enquiries = action.payload
+            })
+            .addCase(getEnquiriesByCountryId.rejected, (state, action) => {
+                state.isLoading = false
+                state.isError = true
+                state.message = action.payload
+                state.enquiries = []
             })
     }
 })

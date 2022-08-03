@@ -5,10 +5,12 @@
 @import './components/header';
 @import './components/questionCategories';
 @import './components/countries';
+@import './components/spinner';
 
 // pages import
 @import './pages/home';
 @import './pages/chatbotPage';
+@import './pages/allQuestions';
 
 
 *{

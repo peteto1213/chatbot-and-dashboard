@@ -16,9 +16,25 @@ const uploadEnquiry = async(body) => {
     return response.data
 }
 
+//get enquiries by question category id
+const getEnquiriesByQuestionCategoryId = async(questionCategoryId) => {
+    const response = await axios.get(`${ENQUIRY_API_URL}/questionCategory/${questionCategoryId}`)
+
+    return response.data
+}
+
+//get enquiries by country id
+const getEnquiriesByCountryId = async(countryId) => {
+    const response = await axios.get(`${ENQUIRY_API_URL}/country/${countryId}`)
+
+    return response.data
+}
+
 const enquiryService = {
     getAllEnquiries,
-    uploadEnquiry
+    uploadEnquiry,
+    getEnquiriesByQuestionCategoryId,
+    getEnquiriesByCountryId
 }
 
 export default enquiryService

@@ -61,6 +61,8 @@ const getEnquiriesByQuestionCategoryId = asyncHandler(async (req, res) => {
     }
 
     const enquiries = await Enquiry.find({questionCategory: req.params.id})
+                                    .populate('questionCategory', 'categoryName')
+                                    .populate('country', 'countryName countryISO clientPopulation latitude longitude')
 
     //check if any enquiries found
     if(!enquiries){
@@ -91,6 +93,8 @@ const getEnquiriesByCountryId = asyncHandler(async (req, res) => {
     }
 
     const enquiries = await Enquiry.find({country: req.params.id})
+                                    .populate('questionCategory', 'categoryName')
+                                    .populate('country', 'countryName countryISO clientPopulation latitude longitude')
 
     //check if any enquiries found
     if(!enquiries){

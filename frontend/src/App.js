@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 // Pages import
 import Home from './pages/Home'
 import ChatbotPage from './pages/ChatbotPage';
+import AllQuestions from './pages/AllQuestions';
 
 // Components import
 import Header from './components/Header.jsx'
@@ -16,7 +17,9 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>} />
 
-            <Route path='/chatbotPage' element={<ChatbotPage/>} />
+            <Route path='/chatbotPage' element={<ChatbotPage />} />
+
+            <Route path='/allQuestions' element={<AllQuestions />}/>
 
             {/* Default: Redirect to home */}
             <Route path='*' element={<Navigate to="/" replace />} />

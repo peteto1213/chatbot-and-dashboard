@@ -1,0 +1,188 @@
+.all-questions {
+  @include customFlex(column, flex-start, flex-start);
+
+  #stream {
+        margin-left: auto;
+        display: none
+    }
+
+  .heading {
+    width: 100%;
+  }
+
+  .content {
+    @include customFlex(row, flex-start, flex-start);
+    width: 100%;
+
+    .all-enquiries{
+        width: 75%;
+        margin-right: 1.1rem;
+
+        .no-wordings{
+            text-align: center;
+            margin-top: 3rem;
+            color: rebeccapurple;
+            font-size: 2rem;
+        }
+
+        table {
+            margin: 1rem 0;
+            background: #fdfdfd;
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            display: table;
+            border-color: gray;
+            text-align: center;
+            font-size: 2rem;
+
+            thead {
+                background-color: transparent;
+                vertical-align: middle;
+                color: $primaryColor;
+                font-weight: 700;
+
+                tr {
+                    display: table-row;
+
+                    th {
+                        border: 1px solid #dbdbdb;
+                        padding: 0.5rem 0.3rem;
+                        vertical-align: top;
+                    }
+                }
+            }
+
+            tbody {
+                display: table-row-group;
+                vertical-align: middle;
+                border-color: inherit;
+                color: gray;
+
+                tr {
+                    display: table-row;
+                    vertical-align: inherit;
+                    border-color: inherit;
+
+                    td {
+                        border: 1px solid #dbdbdb;
+                        padding: 1rem 0;
+                        vertical-align: middle;
+
+                        a {
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+
+                        .icon{
+                            color: white;
+                            background: purple;
+                            padding: 0.5rem 0.7rem;
+                            border-radius: 1rem;
+                            font-size: 1.7rem;
+                            margin-right: 0.5rem;
+                            cursor: pointer;
+                            border: none;
+
+                            &:hover{
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar {
+      @include customFlex(column, flex-start, flex-start);
+      width: 45rem;
+      height: 100%;
+      gap: 2rem;
+
+      .category-bar {
+        @include customFlex(column, flex-start, flex-start);
+        width: 100%;
+        padding: 2rem;
+        border: $border;
+        border-color: $borderColor;
+        box-shadow: $box-shadow;
+
+        h3 {
+          font-weight: 700;
+          font-size: 2.5rem;
+          color: $secondaryColor;
+          border-bottom: 0.1rem solid $lightColor;
+          width: 100%;
+          margin-bottom: 1.3rem;
+        }
+
+        .category {
+          width: 100%;
+          font-size: 2rem;
+          padding: 1.5rem 1rem;
+          border-bottom: 0.1rem solid $lightColor;
+          cursor: pointer;
+          color: gray;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: black;
+            padding-left: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+    .all-questions {
+        #stream {
+            display: initial;
+            cursor: pointer;
+            transition: 0.1s linear;
+            margin-right: 2rem;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .heading {
+            .icon {
+                margin-left: 2rem;
+            }
+        }
+
+        .content {
+            width: 100%;
+
+            .all-enquiries{
+                width: 98%;
+
+                .enquiry-table{
+                    width: 100%;
+                }
+            }
+
+            .sidebar {
+                position: absolute;
+                right: -45rem;
+                transition: all .5s;
+            }
+
+            .sidebar.active {
+                display: initial;
+                position: absolute;
+                right: 0;
+                background: whitesmoke;
+                border-radius: 1.5rem;
+                padding: 3rem 0 0 5rem;
+                margin-top: -2rem;
+                z-index: 1000;
+            }
+        }
+    }
+}

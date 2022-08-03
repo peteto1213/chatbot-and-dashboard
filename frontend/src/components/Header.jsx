@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaSearchLocation, FaTags, FaUserAlt, FaQuestionCircle, FaSignOutAlt, FaTimes, FaRegPaperPlane, FaRobot } from 'react-icons/fa'
+import { FaSearchLocation, FaTags, FaQuestionCircle, FaTimes, FaRegPaperPlane, FaRobot } from 'react-icons/fa'
 import { useState } from 'react'
 
 function Header() {
@@ -32,10 +32,9 @@ function Header() {
 
         {/* Page navigation links */}
         <nav className={menu? "navbar active" : "navbar"}>
-            <Link to='/dashbard' onClick={hideMenu}><FaSearchLocation />Geographical Data</Link>
-            <Link to='/dashbard' onClick={hideMenu}><FaTags />Question Category Distribution</Link>
-            <Link to='/dashbard' onClick={hideMenu}><FaQuestionCircle />All Questions</Link>
-            <Link to='/dashbard' onClick={hideMenu}><FaUserAlt />Login</Link>
+            <Link to='/geographical' onClick={hideMenu}><FaSearchLocation />Geographical Data</Link>
+            <Link to='/questionCategory' onClick={hideMenu}><FaTags />Question Category Distribution</Link>
+            <Link to='/allQuestions' onClick={hideMenu}><FaQuestionCircle />All Questions</Link>
         </nav>
 
         {/* Responsive layout based on accessing device screen width */}
