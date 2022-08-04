@@ -10,6 +10,7 @@ Access the project at [here](https://chatbot-and-dashboard.netlify.app/)
 - Screenshots of functions demonstrated
 - Technological structure
 - Setup
+- About Deployment
 
 ## About The Project
 
@@ -118,6 +119,10 @@ After all the packages are installed, run the "npm start" command in the fronten
 ```bash
 npm start
 ```
+## About Deployment
+The deployment is separate in terms of frontend and backend
+- Backend: heroku, access at [here](https://nodejs-chatbot-backend.herokuapp.com/)
+- Frontend: netifly, access at [here](https://chatbot-and-dashboard.netlify.app/)
 
 ## Credits
 
