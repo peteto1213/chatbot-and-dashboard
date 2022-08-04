@@ -742,6 +742,30 @@
   width: 100%;
 }
 
+.geographical-data .marker-image {
+  -webkit-transition: 0.2s all linear;
+  transition: 0.2s all linear;
+}
+
+.geographical-data .marker-image:hover {
+  opacity: 0.7;
+}
+
+.geographical-data .info {
+  padding: 1rem;
+}
+
+.geographical-data .info .title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #7cc0dd;
+}
+
+.geographical-data .info .population {
+  font-size: 1.7rem;
+  color: #6296ac;
+}
+
 * {
   margin: 0;
   padding: 0;
