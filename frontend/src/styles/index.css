@@ -737,13 +737,9 @@
           justify-content: center;
 }
 
-.geographical-data .heading {
+.geographical-data {
+  height: 100vh;
   width: 100%;
-}
-
-.geographical-data .map-container {
-  width: 100%;
-  margin: -5rem 0 0 -2rem;
 }
 
 * {
