@@ -1,0 +1,12 @@
+.question-category{
+
+    .heading{
+        width: 100%;
+    }
+
+    .treemap-container{
+        width: 100%;
+        @include flexRowCenter();
+
+    }
+}
