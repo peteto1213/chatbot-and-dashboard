@@ -1,6 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv').config()
 const connectDB = require('./config/db')
+const cors = require('cors')
 const { errorHandler } = require('./middlewares/errorMiddleware')
 
 const app = express()
@@ -16,6 +17,9 @@ app.use(express.urlencoded({extended: false}))
 
 //overriding erroring handling in Express.js
 app.use(errorHandler)
+
+//enable cross-origin "*"
+app.use(cors())
 
 //routes of different collections
 app.use('/api/enquiry', require('./routes/enquiryRoutes'))

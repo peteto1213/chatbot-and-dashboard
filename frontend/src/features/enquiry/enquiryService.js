@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const ENQUIRY_API_URL = '/api/enquiry'
+const ENQUIRY_API_URL = "https://nodejs-chatbot-backend.herokuapp.com/api/enquiry"
 
 //Get all enquiries through REST API
 const getAllEnquiries = async() => {

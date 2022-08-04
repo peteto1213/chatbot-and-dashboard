@@ -68,7 +68,7 @@ function GeographicalData() {
         </div>
 
         <Map 
-            mapboxAccessToken={process.env.REACT_APP_MAP_TOKEN}
+            mapboxAccessToken={"pk.eyJ1IjoicGV0ZXRvMTIxMyIsImEiOiJjbDZlYTM5cjAwZDcyM2pxbzdlZmc1bjBjIn0.9w786IMx9Hcan5dVv9Qsuw"}
             {...viewState}
             onMove={event => setViewState(event.viewState)}
             style={{width: "100%", height: "100vh"}}

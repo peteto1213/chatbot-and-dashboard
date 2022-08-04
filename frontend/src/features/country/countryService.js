@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const COUNTRY_API = '/api/country'
+const COUNTRY_API = "https://nodejs-chatbot-backend.herokuapp.com/api/country"
 
 //get all countries
 const getAllCountries = async() => {
