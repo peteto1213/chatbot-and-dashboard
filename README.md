@@ -20,7 +20,7 @@ This project is to proof the concept of creating a FAQ chatbot and a dashboard f
 ### Category 1 - start the chatbot
 
 Homepage of the website
-![Homepage of the website](images\homepage.png)
+![Homepage of the website](images/homepage.png)
 
 Chatbot layout
 ![Chatbot layout](images\chatbot.png)
@@ -28,21 +28,21 @@ Chatbot layout
 ### Category 2 - dashboard for data analytics
 
 Geographical location of clients
-![Geographical location of clients](images\geographical.png)
+![Geographical location of clients](images/geographical.png)
 
 Client question category distribution
-![Client question category distribution](images\distribution.png)
+![Client question category distribution](images/distribution.png)
 
 All of the client's enquiries
-![All of the client's enquiries](images\allQuestions.png)
+![All of the client's enquiries](images/allQuestions.png)
 
 ### Others - Responsive design
 
 Responsive chat bot
-![Responsive chat bot](images\responsiveChatbot.png)
+![Responsive chat bot](images/responsiveChatbot.png)
 
 Responsive navbar
-![Responsive navbar](images\responsiveNavbar.png)
+![Responsive navbar](images/responsiveNavbar.png)
 
 ## Technologies
 
@@ -54,11 +54,11 @@ This Project is developed using the MERN stack:
 
 ### Architecture view
 
-![Architecture view](images\architecture.jpg)
+![Architecture view](images/architecture.jpg)
 
 ### Database Collections
 
-![Database Collections](images\Collection.jpg)
+![Database Collections](images/Collection.jpg)
 
 ### Function requirements(FR) for this project
 
