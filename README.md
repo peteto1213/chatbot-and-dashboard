@@ -24,7 +24,7 @@ Homepage of the website
 ![Homepage of the website](images/homepage.png)
 
 Chatbot layout
-![Chatbot layout](images\chatbot.png)
+![Chatbot layout](images/chatbot.png)
 
 ### Category 2 - dashboard for data analytics
 
